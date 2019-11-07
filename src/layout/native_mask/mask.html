@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #container {
+      height: 200px;
+      width: 200px;
+      background-color: red;
+      margin: 200px auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+</body>
+</html>
+
+<script>
+  const box = document.getElementById('container');
+  addMask(box, 0.5);
+
+  function addMask(ele, opacity) {
+    const rect = ele.getBoundingClientRect(); 
+    const style = getComputedStyle(ele,null);
+    const mask = document.createElement('div') ;
+
+    mask.style.position='absolute';
+    mask.style.left = (ele.offsetLeft- parseInt(style.marginLeft) ) + 'px';
+    mask.style.top = (ele.offsetTop - parseInt(style.marginTop) ) + 'px';
+    mask.style.width = rect.width + parseInt(style.marginLeft) + parseInt(style.marginRight) + 'px';
+    mask.style.height = rect.height + parseInt(style.marginTop) + parseInt(style.marginBottom) + 'px'; 
+    mask.style.zIndex = 999;
+    mask.style.opacity = opacity || 0.2;
+    mask.style.backgroundColor = 'blue';
+
+    ele.parentNode.appendChild(mask);
+  }
+</script>
