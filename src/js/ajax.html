@@ -12,7 +12,7 @@
 
 <script>
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://suggestion.baidu.com/su?wd=12', true);
+  xhr.open('GET', 'http://suggestion.baidu.com/su?wd=12', false);
   xhr.send();
   var data = xhr.responseText;
   console.log(data);

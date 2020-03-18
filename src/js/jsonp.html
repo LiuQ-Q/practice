@@ -6,57 +6,54 @@
 	<title>Document</title>
 </head>
 <body>
-	
+	<input type="text" id="search-box">
+	<ul id="menu"></ul>
 </body>
 </html>
 
-<script type="text/javascript">
+<script>
 	function jsonp(options) {
 		options = options || {};
+
 		if (!options.url) {
-			throw new Error("参数url不能为空");
+			throw new Error("url不能为空!")
 		}
 
-		var myHead = document.getElementsByTagName('head')[0];
-		// var params = options.data;
-		var myScript = document.createElement('script');
-		myHead.appendChild(myScript);
-		//回调函数
-    window[options.callback] = function(json) {
-			myHead.removeChild(myScript);
-			clearTimeout(myScript.timer);
-			window[options.callback] = null;
-			options.success && options.success(json);
-		};
-		// myScript.src = options.url + '?' + params;
+		const myHead = document.getElementsByTagName('head')[0];
+		const myScript = document.createElement('script');
 		myScript.src = options.url;
+		myHead.appendChild(myScript);
+	}
 
-    //超时处理
-		if (options.time) {
-			myScript.timer = setTimeout(function() {
-				window[options.callback] = null;
-				myHead.removeChild(myScript);
-				options.fail && window[options.fail]({
-					message: "请求超时"
-				})
-			},options.time);
+	function getMenuList(data) {
+		const menu = document.getElementById('menu');
+		let menuListHtml = '';
+		
+		if (data.s.length) {
+			menu.style.display = 'block';
+
+			data.s.forEach((menuData, index) => {
+				menuListHtml += '<li>'+ menuData +'</li>';
+			});
+			
+			menu.innerHTML = menuListHtml;
+		} else {
+			menu.style.display = 'none';
 		}
-	};
-	function getMessage(data) {
-		console.log(data);
 	}
-	function getMessageFailed(err) {
-		console.log(err);
+
+	window.onload = function() {
+		const searchBox = document.getElementById('search-box');
+		const menu = document.getElementById('menu');
+
+		searchBox.onkeyup = function() {
+			if (this.value !== '') {
+				jsonp({
+					url: "http://suggestion.baidu.com/su?wd="+ this.value +"&cb=getMenuList"
+				});
+			} else {
+				menu.style.display = 'none';
+			}
+		}
 	}
-	
-	//调用示例
-	var item = {
-		url: "http://suggestion.baidu.com/su?wd=12&cb=getMessage",
-		// url: "http://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=123&bk_length=600&cb=getMessage",
-		callback: 'getMessage',
-		success: getMessage,
-		fail: 'getMessageFailed',
-		time: 5000,
-	};
-	jsonp(item);
 </script>
