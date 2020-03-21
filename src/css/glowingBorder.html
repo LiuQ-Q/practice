@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlowingBorder</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #060c21;
+    }
+    .box {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #060c21;
+    }
+    .box:before,
+    .box:after {
+      content: "";
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      background-color: #fff;
+      background: linear-gradient(235deg, #89ff00, #060c21, #00bcd4);
+    }
+    .box:before {
+      z-index: -1;
+    }
+    .box:after {
+      z-index: -2;
+      filter: blur(40px);
+    }
+    .content {
+      padding: 20px;
+      box-sizing: border-box;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="content">
+      <h1>Glowing Border</h1>
+      <p>Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border Glowing Border</p>
+    </div>
+  </div>
+</body>
+</html>
