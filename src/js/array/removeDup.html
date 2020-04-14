@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Duplicates</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  let arr = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 5];
+
+  Array.prototype.del = function() {
+    const l = this.length;
+    let newArr = [];
+    let repeat = [];
+
+    this.forEach((item, i) => {
+      if (newArr.indexOf(item)===-1) {
+        newArr.push(item);
+      } else {
+        if (repeat.indexOf(item)===-1) {
+          repeat.push(item);
+        }
+      }
+    })
+
+    newArr.forEach((it, i) => {
+      this.push(it);
+    })
+
+    this.splice(0, l);
+
+    return repeat;
+  }
+
+  console.log(arr.del());
+  console.log(arr);
+</script>

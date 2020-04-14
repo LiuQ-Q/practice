@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closure</title>
+  <style>
+    body {
+      font-size: 12px;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>h1h1h1h1h1h1h1h1h1</h1>
+  <p>pppppppppppppppppp</p>
+  <h2>h2h2h2h2h2h2h2h2h2</h2>
+  <a href="#" id="size-12">12</a>
+  <a href="#" id="size-20">20</a>
+  <a href="#" id="size-30">30</a>
+</body>
+</html>
+<script>
+  function changeSize(size) {
+    return function () {
+      document.body.style.fontSize = size + 'px';
+    }
+  }
+
+  document.getElementById('size-12').onclick = changeSize(12);
+  document.getElementById('size-20').onclick = changeSize(20);
+  document.getElementById('size-30').onclick = changeSize(30);
+</script>
