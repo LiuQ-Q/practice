@@ -80,25 +80,21 @@ document.compatMode
 
 ​	在 H5 出来之前，我们用 div 来表示页面的头部，章节，页脚等，但这些 div 没有实际意义，经统计上百万页面，div 的 id 或 class 大量重复，所以 H5 元素引入了语义化标签
 
-```html
-<group></group>
+```
 <header></header>
 <nav></nav>
+<aside></aside>
+<article></article>
 <section></section>
 <footer></footer>
-<article></article>
-<aside></aside>
 ```
 
 语义化的好处：
 
-​	H5 可以让很多更语义化结构化的代码代替大量无意义的 div 标签
-
-​	提升网页的质量和语义
-
-​	对搜索引擎更加友好
-
-
+HTML 结构清晰 , 代码可读性好 , 方便维护
+有利于 SEO
+浏览器对语义化标签有默认样式 , 保证了基本的结构 , 没有 css 也不会乱掉
+方便其他设备解析 , 如屏幕阅读器
 
 ## property 与 attribute
 
@@ -126,7 +122,7 @@ document.compatMode
 
 ​		在动过 property 的情况下，attribute 不会同步 property
 
-###4. 用户操作的是 property，浏览器认的是 property
+### 4. 用户操作的是 property，浏览器认的是 property
 
 ## h5 中的小功能
 
