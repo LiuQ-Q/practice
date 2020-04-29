@@ -11,10 +11,22 @@
 </html>
 
 <script>
+  const url = "http://suggestion.baidu.com/su?wd=12";
+
+  // 原生 ajax
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://suggestion.baidu.com/su?wd=12', false);
+  xhr.open('GET', url, false);
   xhr.send();
   var data = xhr.responseText;
   console.log(data);
   
+  //jQuery ajax
+  $.ajax({
+    type:"get",
+    url:url,
+    dataType:"json",
+    success: function (data) {
+      console.log(data)
+    }
+  })
 </script>
