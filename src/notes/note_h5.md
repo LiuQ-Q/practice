@@ -96,6 +96,23 @@ HTML 结构清晰 , 代码可读性好 , 方便维护
 浏览器对语义化标签有默认样式 , 保证了基本的结构 , 没有 css 也不会乱掉
 方便其他设备解析 , 如屏幕阅读器
 
+## h5 中移出的标签元素
+
+```
+<acronym>
+<applet>
+<basefont>
+<big>
+<center>
+<dir>
+<font>
+<frame>
+<frameset>
+<noframes>
+<strike>
+<tt>
+```
+
 ## property 与 attribute
 
 ### 1. 什么是 attribute， 什么是 property
