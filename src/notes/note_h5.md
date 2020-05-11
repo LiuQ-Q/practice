@@ -178,5 +178,60 @@ contenteditable
 </div>
 ```
 
+### html5 新特性
 
+1. 语义化标签
 
+   header , footer , aside , section , article , nav
+
+2. 表单输入类型
+
+   email , url , number , range , Date Pickers , search , color
+
+3. 表单属性
+
+   autocomplete , placeholder , form
+
+4. 视频音频
+
+   video , audio
+
+5. 画布
+
+   canvas
+
+6. 伸缩矢量图
+
+   svg
+
+7. 拖拽属性
+
+   draggable
+
+8. 事件
+
+   resize , reput
+
+9. 地理定位
+
+   Geolocation
+
+10. web存储
+
+    sessionStorage , localStorage
+
+11. 应用程序缓存 application cache
+
+    创建 cache mainifest 文件
+
+12. 文件通讯协议
+
+    websocket
+
+13. 文件读取
+
+    fileReader
+
+14. 类名操作
+
+    classlist
