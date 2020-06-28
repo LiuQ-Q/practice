@@ -177,7 +177,17 @@ function deepClone(obj) {
 	return JSON.parse(_obj);
 }
 ```
+
+* 如果obj里面有时间对象，则JSON.stringify后再JSON.parse的结果，时间将只是字符串的形式。而不是时间对象；
+* 如果obj里有RegExp、Error对象，则序列化的结果将只得到空对象；
+* 如果obj里有函数，undefined，则序列化的结果会把函数或 undefined丢失；
+* 如果obj里有NaN、Infinity和-Infinity，则序列化的结果会变成null
+* JSON.stringify()只能序列化对象的可枚举的自有属性，例如 如果obj中的对象是有构造函数生成的， 则使用
+* JSON.parse(JSON.stringify(obj))深拷贝后，会丢弃对象的constructor
+* 如果对象中存在循环引用的情况也无法正确实现深拷贝；
+
 3. jQuery 深拷贝
+
 ```
 let array = [1,2,3,4];
 let newArray = $.extend(true,[],array); // true为深拷贝，false为浅拷贝
