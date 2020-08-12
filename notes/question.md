@@ -2,3 +2,4 @@
 
 patch函数
 diff算法
+promise
