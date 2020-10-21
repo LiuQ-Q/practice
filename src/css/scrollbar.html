@@ -4,8 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>scrollbar</title>
+  <style>
+    .scrollbar {
+      width: 200px;
+      height: 200px;
+      overflow: scroll;
+      border: 1px solid red;
+      margin: 0 auto;
+      font-size: 50px;
+    }
+    .scrollbar::-webkit-scrollbar {
+      width: 30px;
+      height: 30px;
+      background-color: blue;
+    }
+    .scrollbar::-webkit-scrollbar-thumb {
+      background-color: aqua;
+      border-radius: 15px;
+    }
+    .scrollbar::-webkit-scrollbar-corner {
+      background-color: aquamarine;
+      border-radius: 15px;
+    }
+    .scrollbar-in {
+      width: 400px;
+      height: 400px;
+    }
+  </style>
 </head>
 <body>
-  
+  <div class="scrollbar">
+    <div class="scrollbar-in">哈哈哈哈哈哈哈哈</div>
+  </div>
 </body>
 </html>
