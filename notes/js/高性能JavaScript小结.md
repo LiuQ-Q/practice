@@ -34,6 +34,16 @@
 
 ### 算法和流程控制（Algorithms and Flow Control）
 
+JavaScript 和其他语言一样，代码的写法和算法会影响运行时间，与其他语言不同的是，JavaScript 可用资源有限，因此优化技术更为重要。
+
+* for、while 和 do-while 循环性能相当，并没有一种循环类型明显快于或慢于其他类型。
+* 避免使用 for-in 循环，除非你需要遍历一个属性数量未知的对象。
+* 改善循环性能的最佳方式是减少每次迭代的运算量和减少循环迭代次数。
+* 通常来说，switch 总是比 if-else 更快，但并不总是最佳解决方案。
+* 在判断条件较多时，使用查找表比 if-else 和 switch 更快。
+* 浏览器的调用栈大小限制了递归算法在 JavaScript 中的应用，栈溢出错误会导致其他代码运行中断。
+* 如果你遇到栈溢出错误，可将方法改为迭代算法，或使用 Memoization 来避免重复计算。
+
 ### 字符串和正则表达式（Strings and Regular Expressions）
 
 ### 快速响应的用户界面（Responsive Interfaces）
