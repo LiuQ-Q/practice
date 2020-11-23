@@ -160,3 +160,5 @@ updateChildren (parentElm, oldCh, newCh) {
 * 一旦 old 或 new 的 StartIdx > EndIdx 表明 oldCh和 vCh 至少有一个已经遍历完了，就会结束比较
 * 若 oldS > oldE 表示 oldCh 先遍历完，那么就将多余的 vCh 根据 index 添加到 DOM 中
 * 若 newS > newE表示 vCh 先遍历完，那么就在真实 DOM 中将区间为 [oldS, oldE] 的多余节点删掉
+
+> https://www.cnblogs.com/wind-lanyan/p/9061684.html
