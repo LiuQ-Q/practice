@@ -11,7 +11,6 @@ promise
 模块化理解
 觉得vue哪里好
 webpack 版本之间的变化
-loader 作用，和 plugin 有什么区别
 封装组件
 vue 打包后的 js 文件大概有哪些，这些文件包含的内容大概是什么
 论坛

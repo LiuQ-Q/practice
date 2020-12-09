@@ -29,3 +29,12 @@ A:
 > CommonJS 加载的是一个对象（即 module.exports 属性），该对象只有在脚本运行完才会生成。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成。- 阮一峰
 
 > https://zhuanlan.zhihu.com/p/121770261
+
+# webpack
+
+Q: loader 作用，和 plugin 有什么区别
+
+A: 
+1. loader 可以将文件从不同的语言（TS 或者 ES6）转换为 JS，或者将内联图像转换为 data URL，它是一个转换器，将 A 文件进行编译形成 B 文件，这里操作的是文件，比如将 A.scss 转换为 A.css，单纯的文件转换过程
+
+2. 在 webpack 运行的生命周期中会广播出许多事件，plugin 可以监听这些事件，在合适的时机通过 webpack 提供的 API 改变输出结果。plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点，执行广泛的任务。
