@@ -15,6 +15,24 @@ A:
 
 4. 性能消耗: v-if 有更高的切换消耗; v-show 有更高的初始渲染消耗
 
+Q: vue 拦截器
+
+A:
+1. 路由拦截器
+
+```
+// to 代表要去的路由指向, from 指从哪个路由跳转过来的, next 为判断操作, 如果为空表示放行
+router.beforeEach((to, from, next) => {
+  if (localStorage.getItem('token) || to.name === 'login) {
+    next()
+  } else {
+    next({ path: '/ })
+  }
+
+  next()
+})
+```
+
 # js
 
 Q: import 与 require 有哪些区别
