@@ -1,10 +1,10 @@
 # vue
 
-Q: el-table-column 用 v-for 生成，改变数组后 `<template slot="header">` 中试图不能触发更新
+##### Q: el-table-column 用 v-for 生成，改变数组后 `<template slot="header">` 中试图不能触发更新
 
 A: 清空原数组，在 nextTick 中重新赋值
 
-Q: v-if 与 v-show 的区别
+##### Q: v-if 与 v-show 的区别
 
 A:
 1. 实现方式: v-if 是通过控制 DOM 节点的存在与否来控制元素的显隐; v-show 是通过设置 DOM 元素的 display 样式，block 为显示，none 为隐藏
@@ -15,7 +15,7 @@ A:
 
 4. 性能消耗: v-if 有更高的切换消耗; v-show 有更高的初始渲染消耗
 
-Q: vue 拦截器
+##### Q: vue 拦截器
 
 A:
 1. 路由拦截器
@@ -33,7 +33,7 @@ router.beforeEach((to, from, next) => {
 })
 ```
 
-Q: 权限控制
+##### Q: 权限控制
 
 A:
 1. 页面级权限控制
@@ -132,7 +132,7 @@ Vue.directive('role', {
 
 # js
 
-Q: import 与 require 有哪些区别
+##### Q: import 与 require 有哪些区别
 
 A:
 1. require/exports 是 CommonJS 规范引入方式; import/export 是 es6 的一个语法标准
@@ -147,7 +147,7 @@ A:
 
 # webpack
 
-Q: loader 作用，和 plugin 有什么区别
+##### Q: loader 作用，和 plugin 有什么区别
 
 A: 
 1. loader 可以将文件从不同的语言（TS 或者 ES6）转换为 JS，或者将内联图像转换为 data URL，它是一个转换器，将 A 文件进行编译形成 B 文件，这里操作的是文件，比如将 A.scss 转换为 A.css，单纯的文件转换过程
