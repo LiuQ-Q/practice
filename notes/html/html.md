@@ -44,3 +44,19 @@ div、ul、li、dl、dt、dd、p、h1-h6、blockquote
 * 空元素
 
 br、meta、hr、link、input、img
+
+## input 框禁止输入空格
+
+原生
+
+```
+<input type="text" οnkeyup="this.value=this.value.replace(/\s+/g,'')">
+```
+
+element
+
+```
+<el-form-item label="姓名" prop="name">
+    <el-input v-model="form.name" :disabled="true" :onkeyup="form.name = form.name.replace(/\s+/g,'')"></el-input>
+</el-form-item>
+```
