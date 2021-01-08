@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+  var nums = [1, 2];
+
+  // 截取尾部插入前面
+  var rotate1 = function(nums, k) {
+    var i = k <= nums.length ? k : k - nums.length;
+    var tempNums = nums.splice(-i, i);
+    nums.unshift(...tempNums);
+  };
+
+  // 翻转
+
+  rotate(nums, 3);
+  console.log(nums);
+</script>
