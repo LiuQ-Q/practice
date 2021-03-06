@@ -5,24 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Table</title>
   <style>
-    .div-head {
-
+    .table-wrapper {
+      position: relative;
     }
-    .div-body {
+    table {
+      table-layout: fixed;
+    }
+    .table-body-wrapper {
       height: 100px;
-      width: 500px;
+      width: 100%;
       overflow: auto;
     }
-    .div-body table td {
+    .table-body-wrapper table td {
       height: 50px;
       width: 50px;
       text-align: center;
     }
+    .table-fixed-wrapper {
+      position: absolute;
+      width: 100px;
+      left: 0;
+      top: 0;
+      overflow: hidden;
+    }
+    .table-fixed-wrapper .table-body-wrapper {
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
-  <div>
-    <div class="div-head">
+  <div class="table-wrapper">
+    <div class="table-header-wrapper">
       <table>
         <colgroup>
           <col width="100">
@@ -36,12 +49,16 @@
             <th>姓名</th>
             <th>性别</th>
             <th>爱好</th>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>爱好</th>
           </tr>
         </thead>
       </table>
     </div>
 
-    <div class="div-body">
+    <div class="table-body-wrapper">
       <table>
         <colgroup>
           <col width="100">
@@ -55,8 +72,16 @@
             <td>张三</td>
             <td>男</td>
             <td>哈哈</td>
+            <td>1</td>
+            <td>张三</td>
+            <td>男</td>
+            <td>哈哈</td>
           </tr>
           <tr>
+            <td>2</td>
+            <td>李四</td>
+            <td>男</td>
+            <td>嘻嘻</td>
             <td>2</td>
             <td>李四</td>
             <td>男</td>
@@ -67,8 +92,36 @@
             <td>王五</td>
             <td>男</td>
             <td>嘎嘎</td>
+            <td>3</td>
+            <td>王五</td>
+            <td>男</td>
+            <td>嘎嘎</td>
           </tr>
           <tr>
+            <td>4</td>
+            <td>陈六</td>
+            <td>女</td>
+            <td>吼吼</td>
+            <td>4</td>
+            <td>陈六</td>
+            <td>女</td>
+            <td>吼吼</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>陈六</td>
+            <td>女</td>
+            <td>吼吼</td>
+            <td>4</td>
+            <td>陈六</td>
+            <td>女</td>
+            <td>吼吼</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>陈六</td>
+            <td>女</td>
+            <td>吼吼</td>
             <td>4</td>
             <td>陈六</td>
             <td>女</td>
@@ -76,6 +129,104 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="table-fixed-wrapper">
+      <div class="table-header-wrapper">
+        <table>
+          <colgroup>
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>编号</th>
+              <th>姓名</th>
+              <th>性别</th>
+              <th>爱好</th>
+              <th>编号</th>
+              <th>姓名</th>
+              <th>性别</th>
+              <th>爱好</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+  
+      <div class="table-body-wrapper">
+        <table>
+          <colgroup>
+            <col width="100">
+            <col width="100">
+            <col width="100">
+            <col width="100">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>张三</td>
+              <td>男</td>
+              <td>哈哈</td>
+              <td>1</td>
+              <td>张三</td>
+              <td>男</td>
+              <td>哈哈</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>李四</td>
+              <td>男</td>
+              <td>嘻嘻</td>
+              <td>2</td>
+              <td>李四</td>
+              <td>男</td>
+              <td>嘻嘻</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>王五</td>
+              <td>男</td>
+              <td>嘎嘎</td>
+              <td>3</td>
+              <td>王五</td>
+              <td>男</td>
+              <td>嘎嘎</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>陈六</td>
+              <td>女</td>
+              <td>吼吼</td>
+              <td>4</td>
+              <td>陈六</td>
+              <td>女</td>
+              <td>吼吼</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>陈六</td>
+              <td>女</td>
+              <td>吼吼</td>
+              <td>4</td>
+              <td>陈六</td>
+              <td>女</td>
+              <td>吼吼</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>陈六</td>
+              <td>女</td>
+              <td>吼吼</td>
+              <td>4</td>
+              <td>陈六</td>
+              <td>女</td>
+              <td>吼吼</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </body>
