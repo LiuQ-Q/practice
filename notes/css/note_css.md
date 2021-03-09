@@ -47,3 +47,9 @@ px 表示绝对尺寸（实际为 css 中定义的像素），设置字体大小
 em 表示相对尺寸，其相对于当前对象内文本的 font-size
 
 rem 表示相对尺寸，其相对于根元素 <html> 的 font-size
+
+#### 介绍 Flex 布局，flex 是什么属性的缩写
+
+弹性盒布局，CSS3 的新属性，用于方便布局，比如垂直居中
+
+flex属性是 flex-grow、flex-shrink 和 flex-basis 的简写
