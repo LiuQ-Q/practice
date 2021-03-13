@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cloneDeep</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  var a = [1, 2, 3]
+  var b = [1, [2.1, 2.2], 3]
+  var c = [1, 2, {c1: 3.1, c2: 3.2}]
+  var d = {d1: 1, d2: [2.1, [2.2, {d21: 2.3}]], d3: {d31: 31, d32: {d33: 33}}}
+
+  function cloneDeep (obj) {
+    var res
+
+    if (typeof(obj) === 'object') {
+      res = obj.constructor === Array ? [] : {}
+      for (let i in obj) {
+        res[i] = typeof(obj[i]) === 'object' ? cloneDeep(obj[i]) : obj[i]
+      }
+    } else {
+      res = obj
+    }
+
+    return res
+  }
+
+  var deep = cloneDeep(d)
+  deep.d2[1][1].d21 = 'change'
+
+  console.log(deep)
+  console.log(d)
+</script>
