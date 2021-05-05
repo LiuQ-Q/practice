@@ -50,3 +50,5 @@ stringfy 序列化对象时，对象的属性为 function、null、undefined 时
 面包屑解决方案
 
 resume
+
+判断数据类型
